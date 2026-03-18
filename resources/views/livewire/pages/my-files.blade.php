@@ -26,7 +26,8 @@
                 <flux:table.rows>
                     @forelse ($files as $file)
                         <flux:table.row :key="$file->id" x-data x-on:dblclick="$wire.openFolder({{$file->id}})" class="hover:bg-blue-100">
-                            <flux:table.cell class="flex items-center gap-3">
+                            <flux:table.cell class="flex">
+                                <livewire:app.file-icon :file="$file" />
                                 {{ $file->name }}
                             </flux:table.cell>
                             <flux:table.cell class="whitespace-nowrap">{{ $file->owner }}</flux:table.cell>
